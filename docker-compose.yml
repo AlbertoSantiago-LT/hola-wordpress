@@ -11,3 +11,9 @@ services:
       - "3306:3306"
     volumes:
       - ./mariadb-data:/var/lib/mysql
+  apache:
+    image: httpd:2.4
+    ports:
+      - "80:80"
+    volumes:
+      - ./public-html/:/usr/local/apache2/htdocs/
